@@ -1,0 +1,82 @@
+:root {
+  --primcol: #4D204E;
+  --compprimcol: #214e20;
+}
+
+a, a > code {
+  color: #88398a;
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  color: var(--compprimcol);
+  text-decoration-style: double;
+}
+
+/* headers and fonts*/
+h1, h2, h3 {
+  margin-top: 0;
+  margin-left: 0;
+  font-family: 'Oswald';
+  font-weight: normal;
+  color: var(--primcol);
+  
+}
+
+.large {
+  font-size: 23px;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.remark-slide-content > h1 {
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: -00px;
+}
+
+.remark-slide-content {
+  border-top: 8px solid var(--primcol);
+  border-bottom: 8px solid var(--primcol);
+  border-right: 11px solid var(--primcol);
+  border-left: 11px solid var(--primcol);
+  padding: 1em 2em 1em 2em;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.inverse {
+  background-color: var(--primcol);
+  color: #fff;
+  
+}
+
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #fff;
+}
+
+.title-slide {
+  background-color: var(--primcol);
+}
+
+/* slide number */
+.remark-slide-number {
+  font-size: 1remFF;
+  font-family: 'EB Garamond';
+  color: var(--primcol);
+  opacity: 1;
+}
+.inverse .remark-slide-number {
+  font-size: 1rem;
+  font-family: 'EB Garamond';
+  color: #fff;
+  opacity: 1;
+}
+
+.upper {
+  text-transform: uppercase;
+}
