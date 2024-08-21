@@ -8,7 +8,7 @@
 <link href="CIandPVals_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="CIandPVals_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="CIandPVals_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-99.9.9">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="David Hodge">
   <meta name="dcterms.date" content="2024-08-22">
@@ -43,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -71,7 +71,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.cf { color: #003b4f; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -85,7 +85,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.kw { color: #003b4f; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -443,7 +443,7 @@ David Hodge
 <p><strong>Informal Definition</strong></p>
 </div>
 <div class="callout-content">
-<p>A <span class="term">confidence interval</span> is an interval, like <span class="math inline">\([5.5,6.2]\)</span> or <span class="math inline">\([1.43,2.34]\)</span>, created by a statistical process, it has an associated <span class="term">proportion / probability / confidence level</span>, typically we use <span class="math inline">\(95\%\)</span> or <span class="math inline">\(99\%\)</span>.</p>
+<p>A <span class="term">confidence interval</span> is an interval, like <span class="math inline">\([5.5,6.2]\)</span> or <span class="math inline">\([1.43,2.34]\)</span>, created by a statistical process, it has an associated <span class="term">proportion / confidence level</span>, typically we use <span class="math inline">\(95\%\)</span> or <span class="math inline">\(99\%\)</span>.</p>
 <p>The process of generating the interval is designed to have a specific property:</p>
 <div class="alert">
 <p>Our target proportion of the time… the interval we generate contains the true unknown population parameter we want to estimate.</p>
@@ -506,11 +506,12 @@ If the true $\theta$ is actually $27\%$ we might hope our output interval to be 
 <p>95% of the time this central process spits out an interval which contains the true <span class="math inline">\(\theta\)</span>.</p>
 </div><div class="column" style="width:22%;">
 
-</div></div>
+</div>
+</div>
 <div class="hidden">
 <div class="cell" data-reveal="true" data-fig-width="6" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-mermaid" class="quarto-float quarto-figure quarto-figure-center">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center quarto-float">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -567,7 +568,8 @@ Figure&nbsp;1: Process of generating confidence intervals
 [0.154352, 0.512248]
 [0.054352, 0.412248]</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 <!-- HIDDEN
 
@@ -582,8 +584,6 @@ $$
 $$
 
 
-
-
 ::: {.cell layout-ncol="2"}
 ::: {.cell-output-display}
 ![](CIandPVals_files/figure-revealjs/unnamed-chunk-5-1.png){width=960}
@@ -593,8 +593,6 @@ $$
 ![](CIandPVals_files/figure-revealjs/unnamed-chunk-5-2.png){width=960}
 :::
 :::
-
-
 
 
 These example sample histograms illustrate that even the shape depends on $\theta$, which we don't know.
@@ -692,7 +690,7 @@ $$
 </div>
 <div class="callout-content">
 <p><span class="math inline">\(\theta\)</span> is fixed but unknown to you, we are not attaching probabilities to possible values of <span class="math inline">\(\theta\)</span>.</p>
-<p>Confusingly we’re not even saying a particular specific interval has a ‘probability of containing <span class="math inline">\(\theta\)</span>’</p>
+<p>Confusingly we’re not even saying a particular specific interval has a ‘probability of containing <span class="math inline">\(\theta\)</span>’.</p>
 </div>
 </div>
 </div>
@@ -753,8 +751,6 @@ $$
 \hat{\sigma}^2 = \frac{1}{n-1}\sum_1^n \left(x_i-\hat{\mu}\right)^2
 $$
 But the probability calculation for the interval is no longer for a Normal distribution, so we'll save this for a future module!
-
-
 
 
 
@@ -831,7 +827,7 @@ Suppose you're estimating $\mu$ from a $N(\mu, \sigma^2)$ with known $\sigma$, h
 <h3 id="p-stands-for-probability"><span class="math inline">\(p\)</span> stands for probability</h3>
 <p>We calculate a <span class="math inline">\(p\)</span>-value in the realm of <span class="term">hypothesis testing</span>, something we have touched on before.</p>
 <p>We have theories about a model parameter(s).</p>
-<p>Typically this includes some boring/default possibility, called a <span class="term">null hypothesis</span>, which says something concrete and specific about the parameter, like <span class="math inline">\(\theta=0\)</span> or <span class="math inline">\(\theta=0.5\)</span>, or in a more complex situation that two population’s means are the same, so <span class="math inline">\(\mu_1=\mu_2\)</span>.</p>
+<p>Typically this includes some boring/default possibility, called a <span class="term">null hypothesis</span> (<span class="math inline">\(H_0\)</span>) which says something concrete and specific about the parameter, like <span class="math inline">\(\theta=0\)</span> or <span class="math inline">\(\theta=0.5\)</span>, or in a more complex situation that two population’s means are the same, so <span class="math inline">\(\mu_1=\mu_2\)</span>.</p>
 </section>
 <section id="what-is-a-p-value-1" class="slide level2">
 <h2>What is a <span class="math inline">\(p\)</span>-value?</h2>
@@ -852,9 +848,12 @@ Suppose you're estimating $\mu$ from a $N(\mu, \sigma^2)$ with known $\sigma$, h
 </div>
 </div>
 </div>
-<p>Tiny <span class="math inline">\(p\)</span>-values are very rarely the result of this process, if <span class="math inline">\(H_0\)</span> really is true.</p>
-<p>So a <span class="math inline">\(p\)</span>-value is just a single number, which informally captures a measure of the unlikeliness of what happened…</p>
-<p>Critically, always <span class="alert">assuming the null hypothesis about <span class="math inline">\(\theta\)</span> is true</span>.</p>
+<!--
+Tiny $p$-values are very rarely the result of this process, if $H_0$ really is true.
+
+So a $p$-value is just a single number, which informally captures a measure of the unlikeliness of what happened...
+-->
+<p>Critically, we’re <span class="alert">assuming the null hypothesis about <span class="math inline">\(\theta\)</span> is true</span>.</p>
 <!--This is often shortened to the phrase [under the null hypothesis]{.term}.
 -->
 <!--
@@ -894,8 +893,6 @@ On the previous slide we were unable to give a fully satsifying definition for a
 
 
 
-
-
 ---
 -->
 </section>
@@ -911,41 +908,43 @@ On the previous slide we were unable to give a fully satsifying definition for a
 <p>Assuming <span class="math inline">\(H_0\)</span> this central process spits out a value drawn from a random variable, <span class="math inline">\(P\)</span>. <br> <span class="small">(Typically <span class="math inline">\(P\)</span> is actually Uniform<span class="math inline">\([0,1]\)</span>.)</span></p>
 </div><div class="column" style="width:22%;">
 <p>Interpret!</p>
-</div></div>
+</div>
+</div>
 <div class="hidden">
 <p>flowchart LR A[Plan experimente.g.&nbsp;n, α ] –&gt; B subgraph proc [p-value process] B[Do experiment] –&gt; C[Analyse then calculate p-value] end subgraph output [p-value] C –&gt; D[p] end</p>
 </div>
 </section>
 <section id="a-measure-of-surprise" class="slide level2">
 <h2>A measure of surprise</h2>
-<p>One interpretation of the <span class="math inline">\(p\)</span>-value is as a <span class="term">measure of surprise</span> of getting the result we did, assuming <span class="math inline">\(H_0\)</span> is true. However, you should really only compare it with your pre-chosen <span class="alert">surprise level</span>…</p>
-<div title="Always pick your $\alpha$ first">
+<p>One informal interpretation of the <span class="math inline">\(p\)</span>-value is as a <span class="term">measure of surprise</span> of getting the result we did, assuming <span class="math inline">\(H_0\)</span> is true. More formally…</p>
+<div title="Always pick a significance level $\alpha$ first">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Always pick your <span class="math inline">\(\alpha\)</span> first</strong></p>
+<p><strong>Always pick a significance level <span class="math inline">\(\alpha\)</span> first</strong></p>
 </div>
 <div class="callout-content">
-<p>It is important to set a <span class="term">significance level</span> <span class="math inline">\(\alpha\)</span>, e.g.&nbsp;<span class="math inline">\(\alpha=5\%=0.05\)</span> before conducting the experiment. Your <span class="math inline">\(p\)</span>-value is then compared to this <span class="math inline">\(\alpha\)</span> to see if it is even smaller than this pre-defined ‘suprise level/threshold’.</p>
-<p>If <span class="math inline">\(p\)</span> is low enough, we say the evidence is significant to <span class="alert">reject our null hypothesis</span>.</p>
+<p>It is important to set a <span class="term">significance level</span> <span class="math inline">\(\alpha\)</span>, e.g.&nbsp;<span class="math inline">\(\alpha=5\%=0.05\)</span> before conducting the experiment. Your <span class="math inline">\(p\)</span>-value is then compared to this <span class="math inline">\(\alpha\)</span>.</p>
+<p>If probability <span class="math inline">\(p\)</span> is lower than <span class="math inline">\(\alpha\)</span>, we say there is <span class="alert">significant evidence</span> to <span class="alert">reject our null hypothesis</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div title="Always under $H_0$">
+<div title="Always assuming $H_0$">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Always under <span class="math inline">\(H_0\)</span></strong></p>
+<p><strong>Always assuming <span class="math inline">\(H_0\)</span></strong></p>
 </div>
 <div class="callout-content">
-<p>Always contextualize any statments you make about <span class="math inline">\(p\)</span> in the context that you are assuming <span class="math inline">\(H_0\)</span> is true. You are not trying to calculate the probability of this, or some other hypothesis being true. Just looking for evidence against <span class="math inline">\(H_0\)</span>.</p>
+<p>Any statements you make are in this context.</p>
+<p>You are not trying to calculate the probability of this, or some other hypothesis being true. Just looking for evidence against <span class="math inline">\(H_0\)</span>.</p>
 </div>
 </div>
 </div>
@@ -955,9 +954,9 @@ On the previous slide we were unable to give a fully satsifying definition for a
 <h2>Example of a <span class="math inline">\(p\)</span>-value</h2>
 <h3 id="my-psychic-friend">My psychic friend</h3>
 <p>My friend claims to have mild magic powers. They claim to be able to correctly guess with better than random luck the results of tossing a fair coin, one at a time. So I planned an experiment, I would toss a coin <span class="math inline">\(20\)</span> times and count how many of the tosses they could correctly predict.</p>
-<p>And I set a target <span class="term">signficance level</span> <span class="math inline">\(\alpha=0.05=5\%\)</span> for my surprise/significance threshold.</p>
+<p>I set a target <span class="term">significance level</span> <span class="math inline">\(\alpha=0.05=5\%\)</span> for my surprise/significance threshold.</p>
 <p>They actually got <span class="math inline">\(16\)</span> out of <span class="math inline">\(20\)</span> tosses correct!</p>
-<p>My <span class="math inline">\(H_0\)</span> was that they had no psychic abilities, and so <span class="alert">under <span class="math inline">\(H_0\)</span></span> each guess would be 50/50 correct. So, with my knowledge of Binomial probabilities, <span class="term">under this <span class="math inline">\(H_0\)</span></span></p>
+<p>My <span class="math inline">\(H_0\)</span> was that they had no psychic abilities, and so <span class="alert">assuming <span class="math inline">\(H_0\)</span></span> each guess would be 50/50 correct. So, with my knowledge of Binomial probabilities, <span class="term">assuming this <span class="math inline">\(H_0\)</span></span></p>
 <p><span class="math display">\[
 \mathbb{P}_{H_0}(\text{correct}(X) \geq 16) = \mathbb{P}(16, 17, 18, 19 \text{ or }20 \text{ correct}) = 0.005909
 \]</span> e.g.&nbsp;via <code>1-pbinom(15, 20, 0.5)</code> in R.</p>
@@ -1326,42 +1325,80 @@ We could sample 3000 adult women in Denmark and the Netherlands and discover the
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1395,7 +1432,18 @@ We could sample 3000 adult women in Denmark and the Netherlands and discover the
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1427,29 +1475,7 @@ We could sample 3000 adult women in Denmark and the Netherlands and discover the
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1457,7 +1483,7 @@ We could sample 3000 adult women in Denmark and the Netherlands and discover the
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
