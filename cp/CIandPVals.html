@@ -535,8 +535,8 @@ Figure&nbsp;1: Process of generating confidence intervals
 </div>
 </div>
 </section>
-<section id="sample-intervals" class="slide level2">
-<h2>9 sample intervals</h2>
+<section id="one-confidence-interval" class="slide level2">
+<h2>One confidence interval</h2>
 <h3 id="using-n30-and-the-true-secret-theta">using <span class="math inline">\(n=30\)</span> and the true (secret <span class="math inline">\(\theta\)</span>)</h3>
 <div class="center">
 <div class="cell columns column-output-location">
@@ -549,13 +549,47 @@ Figure&nbsp;1: Process of generating confidence intervals
 <span id="cb1-6"><a href=""></a>oneInterval <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
 <span id="cb1-7"><a href=""></a>  x <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">30</span>, theta)</span>
 <span id="cb1-8"><a href=""></a>  xbar <span class="ot">&lt;-</span> <span class="fu">round</span>(x <span class="sc">/</span> n, <span class="dv">4</span>)</span>
-<span id="cb1-9"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"["</span>, xbar <span class="sc">-</span> w, <span class="st">", "</span>,</span>
-<span id="cb1-10"><a href=""></a>      xbar <span class="sc">+</span> w, <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>,</span>
-<span id="cb1-11"><a href=""></a>      <span class="at">sep=</span><span class="st">""</span>)</span>
-<span id="cb1-12"><a href=""></a>}</span>
-<span id="cb1-13"><a href=""></a></span>
-<span id="cb1-14"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb1-15"><a href=""></a>  <span class="fu">oneInterval</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Out of"</span>, n, <span class="st">"people:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb1-10"><a href=""></a>      x, <span class="st">"said yes.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-11"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"["</span>, xbar <span class="sc">-</span> w, <span class="st">", "</span>,</span>
+<span id="cb1-12"><a href=""></a>      xbar <span class="sc">+</span> w, <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb1-13"><a href=""></a>      <span class="at">sep=</span><span class="st">""</span>)</span>
+<span id="cb1-14"><a href=""></a>}</span>
+<span id="cb1-15"><a href=""></a></span>
+<span id="cb1-16"><a href=""></a><span class="fu">oneInterval</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code>Out of 30 people:
+ 8 said yes.
+[0.087752, 0.445648]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-sample-intervals" class="slide level2">
+<h2>8 more sample intervals</h2>
+<h3 id="using-n30-and-the-true-secret-theta-1">using <span class="math inline">\(n=30\)</span> and the true (secret <span class="math inline">\(\theta\)</span>)</h3>
+<div class="center">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># (set secret theta)</span></span>
+<span id="cb3-2"><a href=""></a>n <span class="ot">=</span> <span class="dv">30</span></span>
+<span id="cb3-3"><a href=""></a>sigma <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span><span class="fu">sqrt</span>(n)), <span class="dv">4</span>)</span>
+<span id="cb3-4"><a href=""></a>w <span class="ot">&lt;-</span> <span class="fl">1.96</span><span class="sc">*</span>sigma</span>
+<span id="cb3-5"><a href=""></a></span>
+<span id="cb3-6"><a href=""></a>oneInterval <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb3-7"><a href=""></a>  x <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">30</span>, theta)</span>
+<span id="cb3-8"><a href=""></a>  xbar <span class="ot">&lt;-</span> <span class="fu">round</span>(x <span class="sc">/</span> n, <span class="dv">4</span>)</span>
+<span id="cb3-9"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"["</span>, xbar <span class="sc">-</span> w, <span class="st">", "</span>,</span>
+<span id="cb3-10"><a href=""></a>      xbar <span class="sc">+</span> w, <span class="st">"]</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb3-11"><a href=""></a>      <span class="at">sep=</span><span class="st">""</span>)</span>
+<span id="cb3-12"><a href=""></a>}</span>
+<span id="cb3-13"><a href=""></a></span>
+<span id="cb3-14"><a href=""></a><span class="fu">oneInterval</span>()</span>
+<span id="cb3-15"><a href=""></a></span>
+<span id="cb3-16"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)</span>
+<span id="cb3-17"><a href=""></a>  <span class="fu">oneInterval</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.087752, 0.445648]
@@ -586,11 +620,11 @@ $$
 
 ::: {.cell layout-ncol="2"}
 ::: {.cell-output-display}
-![](CIandPVals_files/figure-revealjs/unnamed-chunk-5-1.png){width=960}
+![](CIandPVals_files/figure-revealjs/unnamed-chunk-7-1.png){width=960}
 :::
 
 ::: {.cell-output-display}
-![](CIandPVals_files/figure-revealjs/unnamed-chunk-5-2.png){width=960}
+![](CIandPVals_files/figure-revealjs/unnamed-chunk-7-2.png){width=960}
 :::
 :::
 
