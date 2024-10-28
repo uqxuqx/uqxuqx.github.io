@@ -1,0 +1,78 @@
+.position-indicator {
+  /* display: none; */
+  position: fixed;
+  bottom: 10px; /* Move to bottom */
+    right: 10px;  /* Keep on the right */
+    color: rgba(200, 200, 200, 1); /* Pale grey text color */
+    padding: 5px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 1000;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666; /* Light grey subtitle */
+    margin-top: -10px; /* Adjust spacing below the title */
+}
+
+.margin-fig {
+    position: absolute;
+    right: -104px; /* Adjust this value as needed */
+    width: 96px; /* Set width of the image */
+}
+
+.pdf .margin-fig {
+    position: absolute;
+    right: -48px; /* Adjust this value as needed */
+    width: 48px; /* Set width of the image */
+}
+
+.loc1{
+  top: 16%; /* Center it vertically */
+  transform: translateY(-16%); /* Adjust for centering */
+}
+
+.loc2{
+  top: 43%; /* Center it vertically */
+  transform: translateY(-43%); /* Adjust for centering */
+}
+
+.loc3{
+  top: 71%; /* Center it vertically */
+  transform: translateY(-71%); /* Adjust for centering */
+}
+
+.loc4{
+  top: 97%; /* Center it vertically */
+  transform: translateY(-97%); /* Adjust for centering */
+}
+
+.pdf .loc1{
+  top: 18%; /* Center it vertically */
+  transform: translateY(-18%); /* Adjust for centering */
+}
+
+.pdf .loc2{
+  top: 39%; /* Center it vertically */
+  transform: translateY(-39%); /* Adjust for centering */
+}
+
+.pdf .loc3{
+  top: 60%; /* Center it vertically */
+  transform: translateY(-60%); /* Adjust for centering */
+}
+
+.pdf .loc4{
+  top: 82%; /* Center it vertically */
+  transform: translateY(-82%); /* Adjust for centering */
+}
+
+
+img {
+  margin: 0 !important;
+}    
+
+
+.small-content p {
+  font-size: 85%;
+}
